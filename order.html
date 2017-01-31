@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="Galvanize Delivers" content="Rocketship delivery to your door">
+  <title>Ordering Page</title>
+  <!-- Browser optimized for mobile-->
+  <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <!-- Google icon font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <nav class = "#2962ff blue accent-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Galvanize Delivers</a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#">Order Delivery</a>
+        </li>
+      </ul>
+      <ul class="side-nav">
+        <li>
+          <a href="#">Order Delivery</a>
+        </li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+        <li>
+          <a href="#">Navbar Link</a>
+        </li>
+      </ul>
+      <a href="#" data-activites="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="row">
+        <div class="col s12 m7"> <!-- half screen Food card columns -->
+          <h4>Menu</h4>
+        <div class="col s12 m6"> <!--first food card column -->
+          <div class="card"><!--begin of burger card -->
+            <div class="card-image">
+              <img src="img/burger.jpg" alt="burger">
+            </div>
+            <span class="card-title">Royale with Cheese</span>
+            <div class="card-content">
+              <p>$8.99</p>
+            </div>
+            <div class="card-action">
+              <button class="menuChoice" type="button" name="Royal with Cheese"
+              value="8.99" id="burger">ADD TO ORDER</button>
+            </div>
+          </div>  <!--end of burger card -->
+          <div class="card"><!--begin of smoked swine card -->
+            <div class="card-image">
+              <img src="img/ribs.jpg" alt="smoked swine">
+            </div>
+            <span class="card-title">Smoked Swine</span>
+            <div class="card-content">
+              <p>$14.99</p>
+            </div>
+            <div class="card-action">
+              <button class="menuChoice" type="button" name="Smoked Swine"
+              value="14.99" id="swine">ADD TO ORDER</button>
+            </div>
+          </div>  <!--end of smoked swine card -->
+        </div> <!--end first food card column -->
+        <div class="col s12 m6"> <!--second food card column -->
+          <div class="card"><!-- begin arugula pie card -->
+            <div class="card-image">
+              <img src="img/pizza.jpg" alt="arugula pie">
+            </div>
+            <span class="card-title">Argula Pie</span>
+            <div class="card-content">
+              <p>$11.99</p>
+            </div>
+            <div class="card-action">
+              <button class="menuChoice" type="button" name="Arugula Pie"
+              value="11.99" id="pizza">ADD TO ORDER</button>
+            </div>
+          </div>  <!--end of arugula pie card -->
+          <div class="card"><!-- begin ice cream biscuit card -->
+            <div class="card-image">
+              <img src="img/ice_cream.jpg" alt="ice cream biscuit">
+            </div>
+            <span class="card-title">Ice Cream Biscuit</span>
+            <div class="card-content">
+              <p>$7.99</p>
+            </div>
+            <div class="card-action">
+              <button class="menuChoice" type="button" name="Ice Cream Biscuit"
+              value="7.99" id="ice_cream">ADD TO ORDER</button>
+            </div>
+          </div>  <!--end of ice cream biscut card -->
+        </div> <!--end of second food item card -->
+      </div><!-- half screen for food item cards -->
+
+      <div class="col s12 m5"> <!-- Table column-->
+        <h4>Order</h4>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th data-field="id">Item</th>
+              <th class="right align" data-field="price">Item Price</th>
+            </tr>
+          </thead>
+          <tbody id="table">
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+        <section>
+           <div class="row summary"></div>
+           <div class="col s9 m9 l9">
+             <div>Subtotal</div>
+             <div>Tax</div>
+             <div>Total</div>
+           </div>
+           <div class="col s3 m3 l3">
+             <div id="subtotal">$0.00</div>
+             <div id="tax">$0.00</div>
+             <div id="total">$0.00</div>
+           </div>
+           <br>
+           <br>
+         </section>
+        <br>
+        <br>
+        <!-- Order Form code starts Here -->
+        <div class="row">
+         <div class="row">
+         <form action="#" method="post" onsubmit="checkItems();" >
+           <div class="col s12">
+           <div class="row">
+             <div class="input-field col s12">
+               <i class="material-icons prefix">account_circle</i>
+               <input id="name" placeholder="Your Name" name="order_name" type="text" class="validate" required>
+               <label for="order_name" >Name</label>
+             </div>
+             <div class="input-field col s12">
+               <i class="material-icons prefix">phone</i>
+               <input id="phone" placeholder="Your Phone Number" name="order_telelphone" type="tel" class="validate" required>
+               <label for="order_telephone" >Phone Number</label>
+             </div>
+             <div class="input-field col s12">
+               <i class="material-icons prefix">business</i>
+               <input id="address" placeholder="Your Address" name="order_address" type="text" class="validate" required>
+               <label for="order_address" >Address</label>
+             </div>
+             <div clas="row center">
+               <button type="submit" name="placeOrder" class="#e91e63 pink lighten-2 btn">Place Order</button>
+             </div>
+           </div><!--end div class row in col -->
+         </form><!-- end form class -->
+       </div><!-- end div class row for -->
+     </div><!-- end div class row outside -->
+      </div> <!-- end column for table -->
+    </div> <!--end row -->
+  </div> <!-- end main container -->
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"> -->
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<!--local JavaScript file -->
+<script src="script.js"></script>
+
+<footer class="page-footer #2962ff blue accent-4">
+     <div class="container">
+       <div class="row">
+         <div class="col s6">
+           <h5 class="grey-text">© Galvanize Delivers</h5>
+           <p class="grey-text">Fine Dining, Delivered.</p>
+         </div>
+         <div class="col s6 hide-on-med-and-down">
+           <ul>
+             <li>
+               <a href="#" class="grey-text">Home</a>
+             </li>
+             <li>
+               <a href="#" class="grey-text">Order Delivery</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </footer>
+<!-- comments if needed -->
+</body>
+</html>

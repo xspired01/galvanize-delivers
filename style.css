@@ -1,0 +1,9 @@
+body #index-banner {
+  background: #808080 url("./img/hero.jpg") center center no-repeat;
+  padding-top: 10px;
+  position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
